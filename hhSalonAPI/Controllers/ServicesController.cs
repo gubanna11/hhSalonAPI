@@ -38,7 +38,7 @@ namespace hhSalonAPI.Controllers
 		public async Task<ActionResult<List<ServiceVM>>> CreateService(ServiceVM newService)
 		{
 			var groups = await _groupsService.GetAllAsync();
-			
+
 			try
 			{
 				if (!ModelState.IsValid)
@@ -60,12 +60,19 @@ namespace hhSalonAPI.Controllers
 		public async Task<ActionResult<List<ServiceVM>>> DeleteService(int id)
 		{
 			var serviceVM = await _servicesService.GetServiceByIdWithGroupAsync(id);
-			
+
 			await _servicesService.DeleteAsync(id);
 
 			return Ok(await _servicesService.GetServicesByGroupIdAsync(serviceVM.GroupId));
 		}
 
 
+		[HttpPut]
+		public async Task<ActionResult<List<ServiceVM>>> UpdateService(ServiceVM serviceVM)
+		{
+			await _servicesService.UpdateServiceAsync(serviceVM);
+
+			return Ok(await _servicesService.GetServicesByGroupIdAsync(serviceVM.GroupId));
+		}
 	}
 }

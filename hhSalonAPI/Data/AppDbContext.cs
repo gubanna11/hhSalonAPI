@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace hhSalonAPI.Data
 {
-    public class AppDbContext: IdentityDbContext<Client>
+    public class AppDbContext:IdentityDbContext<Client>
     {
         public DbSet<Service> Services { get; set; }
         public DbSet<GroupOfServices> Groups { get; set; }
