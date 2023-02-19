@@ -81,6 +81,9 @@ namespace hhSalonAPI.Data.Services
 		public async Task<ServiceVM> GetServiceByIdWithGroupAsync(int id)
 		{
 
+			//var service = await _context.Services.Where(s => s.Id == id)
+			//	.Include(s => s.Service_Group).ThenInclude(sg => sg.Group).FirstOrDefaultAsync();
+
 			var groupId = await _context.Services_Groups.Where(sg => sg.ServiceId == id).Select(sg => sg.GroupId).FirstOrDefaultAsync();
 
 
