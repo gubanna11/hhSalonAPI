@@ -1,5 +1,5 @@
 ﻿using hhSalonAPI.Data.Base;
-using hhSalonAPI.Models;
+using hhSalonAPI.Data.Models;
 
 namespace hhSalonAPI.Data.Services
 {

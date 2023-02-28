@@ -1,9 +1,9 @@
-﻿using hhSalonAPI.Models;
-using hhSalonAPI.Data.Base;
+﻿using hhSalonAPI.Data.Base;
 using hhSalonAPI.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace hhSalonAPI.Models
+
+namespace hhSalonAPI.Data.Models
 {
     public class Attendance:IEntityBase
     {
@@ -11,9 +11,9 @@ namespace hhSalonAPI.Models
         [Column("id")]
         public int Id { get; set; }
 
-        [Column("client_id"), Required]
-        public string ClientId { get; set; }
-        public Client Client { get; set; }
+        //[Column("client_id"), Required]
+        //public string ClientId { get; set; }
+        //public User Client { get; set; }
 
         [Column("group_id"), ]
 
@@ -24,9 +24,9 @@ namespace hhSalonAPI.Models
         public int? ServiceId { get; set; }
         public Service Service { get; set; }
 
-        [Column("worker_id"), Required]
-        public string WorkerId { get; set; }
-        public Worker Worker { get; set; }
+        //[Column("worker_id"), Required]
+        //public string WorkerId { get; set; }
+        //public Worker Worker { get; set; }
 
 
         [Column("date", TypeName = "date"), Required]

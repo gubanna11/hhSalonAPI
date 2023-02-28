@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
-namespace hhSalonAPI.Models
+namespace hhSalonAPI.Data.Models
 {
     [Table("groups_of_services")]
 	public class GroupOfServices:IEntityBase
@@ -20,8 +20,8 @@ namespace hhSalonAPI.Models
 		public string Name { get; set; }
 
 
-        [Column("img_url")]
-        public string? ImgUrl { get; set; } 
+		[Column("img_url")]
+        public string ImgUrl { get; set; } 
 
 
         //[Required(ErrorMessage = "Please choose image")]
@@ -30,7 +30,7 @@ namespace hhSalonAPI.Models
 
 
         
-        public List<Service_Group>? Services_Groups { get; set; }
-        public List<Worker_Group>? Workers_Groups { get; set; }
+        public List<Service_Group> Services_Groups { get; set; }
+        //public List<Worker_Group> Workers_Groups { get; set; }
     }
 }

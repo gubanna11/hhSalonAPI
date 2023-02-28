@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace hhSalonAPI.Models
+namespace hhSalonAPI.Data.Models
 {
     [Index(propertyNames: nameof(Name), IsUnique = true)]
     public class Service:IEntityBase
@@ -12,7 +12,7 @@ namespace hhSalonAPI.Models
         [Column("id")]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         [Column("name")]
         [StringLength(45)]
         public string Name { get; set; }

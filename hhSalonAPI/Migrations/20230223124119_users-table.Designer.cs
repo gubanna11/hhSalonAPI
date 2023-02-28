@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hhSalonAPI.Data;
 
@@ -10,9 +11,10 @@ using hhSalonAPI.Data;
 namespace hhSalonAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230223124119_users-table")]
+    partial class userstable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -226,36 +228,28 @@ namespace hhSalonAPI.Migrations
             modelBuilder.Entity("hhSalonAPI.Data.Models.User", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("id");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("longtext")
-                        .HasColumnName("email");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("longtext")
-                        .HasColumnName("first_name");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("longtext")
-                        .HasColumnName("last_name");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Password")
-                        .HasColumnType("longtext")
-                        .HasColumnName("password");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Role")
-                        .HasColumnType("longtext")
-                        .HasColumnName("role");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Token")
-                        .HasColumnType("longtext")
-                        .HasColumnName("token");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("longtext")
-                        .HasColumnName("user_name");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 

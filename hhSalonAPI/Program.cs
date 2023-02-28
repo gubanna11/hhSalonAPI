@@ -1,10 +1,6 @@
-
-
 using hhSalonAPI.Data;
 using hhSalonAPI.Data.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +25,7 @@ builder.Services.AddCors(options => options.AddPolicy(name: "HHOrigins",
 		policy =>
 		{
 			policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+			//policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
 		}));
 
 
@@ -46,12 +43,6 @@ app.UseCors("HHOrigins");
 
 app.UseHttpsRedirection();
 
-//app.UseStaticFiles();
-//app.UseStaticFiles(new StaticFileOptions()
-//{
-//	FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
-//	RequestPath = new PathString("/Resources")
-//});
 
 app.UseAuthorization();
 

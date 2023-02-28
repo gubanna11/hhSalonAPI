@@ -1,6 +1,6 @@
 ﻿using hhSalonAPI.Data;
+using hhSalonAPI.Data.Models;
 using hhSalonAPI.Data.Services;
-using hhSalonAPI.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

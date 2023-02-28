@@ -1,6 +1,6 @@
 ﻿using hhSalonAPI.Data.Base;
+using hhSalonAPI.Data.Models;
 using hhSalonAPI.Data.ViewModels;
-using hhSalonAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace hhSalonAPI.Data.Services

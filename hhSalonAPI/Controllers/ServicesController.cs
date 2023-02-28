@@ -1,7 +1,6 @@
 ﻿using hhSalonAPI.Data;
 using hhSalonAPI.Data.Services;
 using hhSalonAPI.Data.ViewModels;
-using hhSalonAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,13 +13,11 @@ namespace hhSalonAPI.Controllers
 	public class ServicesController : ControllerBase
 	{
 		private readonly IServicesService _servicesService;
-		private readonly AppDbContext context;
 		private readonly IGroupsService _groupsService;
 
 		public ServicesController(IServicesService servicesService, AppDbContext context, IGroupsService groupsService)
 		{
 			_servicesService = servicesService;
-			this.context = context;
 			_groupsService = groupsService;
 		}
 
@@ -41,16 +38,11 @@ namespace hhSalonAPI.Controllers
 			
 			try
 			{
-				if (!ModelState.IsValid)
-				{
-					return BadRequest(ModelState);
-				}
-
 				await _servicesService.AddNewServiceAsync(newService);
 			}
 			catch (Exception)
 			{
-				return BadRequest(newService);
+				return BadRequest();
 			}
 
 			return Ok(await _servicesService.GetServicesByGroupIdAsync(newService.GroupId));

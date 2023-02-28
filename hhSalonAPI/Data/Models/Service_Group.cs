@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace hhSalonAPI.Models
+namespace hhSalonAPI.Data.Models
 {
     public class Service_Group
     {
